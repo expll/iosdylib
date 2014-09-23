@@ -10,6 +10,6 @@
 
 @interface iosdylib : NSObject
 
-- (void)print;
+void print();
 
 @end

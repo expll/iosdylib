@@ -30,7 +30,7 @@
 		2A88B8E619D089610020CF93 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A88B8AD19D06FDE0020CF93 /* UIKit.framework */; };
 		2A88B8EE19D089610020CF93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A88B8EC19D089610020CF93 /* InfoPlist.strings */; };
 		2A88B8F019D089610020CF93 /* demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A88B8EF19D089610020CF93 /* demoTests.m */; };
-		2A88B8F719D089730020CF93 /* iosdylib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A88B89919D06FDD0020CF93 /* iosdylib.dylib */; };
+		CE717FAA19D14D1B00A718D7 /* iosdylib.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 2A88B89919D06FDD0020CF93 /* iosdylib.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +91,7 @@
 		2A88B8EB19D089610020CF93 /* demoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "demoTests-Info.plist"; sourceTree = "<group>"; };
 		2A88B8ED19D089610020CF93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A88B8EF19D089610020CF93 /* demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = demoTests.m; sourceTree = "<group>"; };
+		CE6BCD6A19D1430500D91472 /* test.xx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.xx.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A88B8F719D089730020CF93 /* iosdylib.dylib in Frameworks */,
 				2A88B8C919D089610020CF93 /* CoreGraphics.framework in Frameworks */,
 				2A88B8CA19D089610020CF93 /* UIKit.framework in Frameworks */,
 				2A88B8C719D089610020CF93 /* Foundation.framework in Frameworks */,
@@ -228,6 +228,7 @@
 				2A88B8CE19D089610020CF93 /* InfoPlist.strings */,
 				2A88B8D119D089610020CF93 /* main.m */,
 				2A88B8D319D089610020CF93 /* demo-Prefix.pch */,
+				CE6BCD6A19D1430500D91472 /* test.xx.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -374,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE717FAA19D14D1B00A718D7 /* iosdylib.dylib in Resources */,
 				2A88B8DE19D089610020CF93 /* Images.xcassets in Resources */,
 				2A88B8D019D089610020CF93 /* InfoPlist.strings in Resources */,
 				2A88B8D919D089610020CF93 /* Main.storyboard in Resources */,
@@ -553,6 +555,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -565,6 +568,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Release;
 		};
@@ -613,6 +617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -625,6 +630,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "demo/demo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/demo",
+				);
+				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -635,6 +645,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -643,6 +654,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "demo/demo-Prefix.pch";
 				INFOPLIST_FILE = "demo/demo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/demo",
+				);
+				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -707,6 +723,7 @@
 				2A88B8BE19D06FDE0020CF93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A88B8BF19D06FDE0020CF93 /* Build configuration list for PBXNativeTarget "iosdylibTests" */ = {
 			isa = XCConfigurationList;
@@ -715,6 +732,7 @@
 				2A88B8C119D06FDE0020CF93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A88B8F119D089610020CF93 /* Build configuration list for PBXNativeTarget "demo" */ = {
 			isa = XCConfigurationList;
@@ -723,6 +741,7 @@
 				2A88B8F319D089610020CF93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A88B8F419D089610020CF93 /* Build configuration list for PBXNativeTarget "demoTests" */ = {
 			isa = XCConfigurationList;
@@ -731,6 +750,7 @@
 				2A88B8F619D089610020CF93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
